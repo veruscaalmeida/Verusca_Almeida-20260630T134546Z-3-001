@@ -2,13 +2,13 @@
   {
     "listing": "/lista_disciplina.html",
     "items": [
+      "/Notebooks/Alvos_GPR.html",
       "/Notebooks/Aula_1.html",
       "/build/Notebooks/Aula_1.html",
       "/Notebooks/Aula_2.html",
       "/build/Notebooks/Aula_2.html",
       "/Notebooks/Aula_3.html",
-      "/build/Notebooks/Aula_3.html",
-      "/Notebooks/Alvos_GPR.html"
+      "/build/Notebooks/Aula_3.html"
     ]
   },
   {
