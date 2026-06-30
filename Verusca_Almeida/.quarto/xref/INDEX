@@ -1,0 +1,44 @@
+{
+  "about.qmd": {
+    "about.html": "10b8077a"
+  },
+  "build/about.qmd": {
+    "about.html": "d89da64e"
+  },
+  "build/index.qmd": {
+    "index.html": "c48a6fa5"
+  },
+  "build/lista_disciplina.qmd": {
+    "lista_disciplina.html": "7270b211"
+  },
+  "build/Notebooks/Aula_1.ipynb": {
+    "Aula_1.html": "8320844c"
+  },
+  "build/Notebooks/Aula_2.ipynb": {
+    "Aula_2.html": "bba7342b"
+  },
+  "build/Notebooks/Aula_3.ipynb": {
+    "Aula_3.html": "f75e2142"
+  },
+  "build/passo-a-passo.qmd": {
+    "passo-a-passo.html": "18c69733"
+  },
+  "index.qmd": {
+    "index.html": "748951eb"
+  },
+  "lista_disciplina.qmd": {
+    "lista_disciplina.html": "24ffc7eb"
+  },
+  "Notebooks/Aula_1.ipynb": {
+    "Aula_1.html": "13ed4331"
+  },
+  "Notebooks/Aula_2.ipynb": {
+    "Aula_2.html": "a3873f46"
+  },
+  "Notebooks/Aula_3.ipynb": {
+    "Aula_3.html": "4b503789"
+  },
+  "Notebooks/Alvos_GPR.ipynb": {
+    "Alvos_GPR.html": "6603bc21"
+  }
+}

@@ -1,0 +1,5 @@
+---
+title: "About"
+---
+
+Site de exemplo para discentes da pós-graduação em Engenharia Civil da Universidade Federal da Bahia. O site foi criado na disciplina de Estatística e Planejamento de Experimentos, ministrada pelo professor Mauro.

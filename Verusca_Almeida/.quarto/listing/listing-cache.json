@@ -1,0 +1,10 @@
+{
+  "listingMap": {
+    "build\\lista_disciplina.qmd": [
+      "Notebooks/*.ipynb"
+    ],
+    "lista_disciplina.qmd": [
+      "Notebooks/*.ipynb"
+    ]
+  }
+}

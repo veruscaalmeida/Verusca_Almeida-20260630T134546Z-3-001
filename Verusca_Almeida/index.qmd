@@ -1,0 +1,22 @@
+---
+title: "Verusca Almeida"
+description: "Sou mestranda em Engenharia Civil com foco em análise de dados e modelagem computacional."
+about:
+  template: trestles
+  links:
+    - icon: linkedin    
+      text: LinkedIn
+      url: https://www.linkedin.com/in/verusca-almeida-71112a369
+    - icon: github
+      text: Github
+      url: https://github.com/veruscaalmeida 
+    - icon: file-earmark-person
+      text: lattes
+      url: http://lattes.cnpq.br/5689574497153458
+  image: aluno.jpg
+
+---
+
+## Olá Pessoal,
+
+Sou Verusca Almeida, mestranda em Engenharia Civil. Possuo graduação em Geofísica pela Universidade Federal da Bahia (2024). Tenho interesse na área de Geociências, com ênfase em Geofísica Aplicada, principalmente nos seguintes temas: Radar de penetração no solo (GPR), métodos eletromagnéticos e geofísica aplicada à engenharia geotécnica.

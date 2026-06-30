@@ -1,0 +1,189 @@
+---
+title: "PPEC0039 - Introdução ao Quarto"
+author: "Professor Mauro"
+format: 
+    revealjs:
+        theme: dark
+        slide-number: true
+        controls: true
+        progress: true
+auto-slide: 5000
+loop: true
+menu:
+    side: right
+    width: wide
+---
+
+
+# Página QUARTO { background-image="https://upload.wikimedia.org/wikipedia/commons/f/f9/COSMO_Skymed_flare.PNG"}
+www.quarto.org
+
+## Bem vindo ao QUARTO
+
+Um sistema de publicação científica e técnica de código aberto.
+
+- Use cadernos Jupyter ou com marcação de texto simples em seu editor favorito.
+- Crie conteúdo dinâmico com Python, R, Julia e Observável.
+- Publicar artigos reprodutíveis, apresentações, painéis, sites, blogs e livros...
+- Compartilhe conhecimento e insights. 
+
+
+## A tarefa da disciplina 
+
+- Criar uma pagina pessoal usando o QUARTO.
+- Criar um menu do tipo lista com notebooks produzidos durante a disciplina.
+- Publicar a página usando o GitHub Pages.
+
+# Passos para criar a página 
+
+## Instalar o QUARTO 
+
+- Baixe o [Quarto CLI](https://quarto.org/docs/get-started/).
+- Instale o Quarto .
+- Escolha a melhor ferramenta para criar seu conteúdo (VSCode, Jupyter, RStudio, etc).
+
+## No VSCode 
+
+- Busque o complemento "Quarto" e instale.
+- File > Preferences >  Extensions 
+- ou use o atalho Ctrl+Shift+X
+
+## Criar um novo projeto 
+
+- File > View > Command Palette > Quarto: Create New Project
+- Escolha o tipo de projeto "Website".
+- Clique em "Create Project".
+
+## Na pasta do projeto 
+
+Foram criados os seguintes arquivos:
+- _quarto.yml
+- index.qmd
+- about.qmd
+- styles.css
+
+## Editar o arquivo _quarto.yml 
+
+- O arquivo _quarto.yml é o arquivo de configuração do projeto.
+- Ele define o menu, o formato de saída, etc
+
+- Adicione o arquivo lista_disciplina.qmd no menu.
+
+## O arquivo _quarto.yml fica assim:   
+
+```yaml
+project:
+  type: website 
+website:
+  title: "PPEC0039 - Introdução ao Quarto"
+  navbar:
+    left:
+      - href: index.qmd
+        text: Home  
+      - href: lista_disciplina.qmd
+        text: PPEC0039
+      - href: about.qmd
+        text: Sobre
+
+format:
+  html:
+    theme: cosmo
+    toc: true
+    toc-depth: 2        
+    code-fold: true
+    code-summary: "Mostrar código"
+
+execute:
+  freeze: true
+``` 
+
+## Editar o arquivo index.qmd 
+
+- O arquivo index.qmd é a página inicial do site.
+- Edite o arquivo para adicionar uma breve descrição sobre você e a disciplina.
+- Adicione uma foto sua (opcional).
+
+## O cabeçalho do arquivo index.qmd fica assim: 
+
+```markdown
+---
+title: "Mestrando em Engenharia Civil"
+description: "Sou mestrando em Engenharia Civil com foco em análise de dados e modelagem computacional."
+about:
+  template: trestles
+  links:
+    - icon: linkedin    
+      text: LinkedIn
+      url: https://www.linkedin.com/in/alixandrini/
+    - icon: github
+      text: Github          
+      url: https://www.github.com/alixandrini            
+image: aluno.webp
+
+---
+```
+
+## Editar o arquivo lista_disciplina.qmd med_flare.PNG"}
+
+- O arquivo lista_disciplina.qmd é a página que lista os notebooks da disciplina
+- Edite o arquivo para adicionar os notebooks produzidos durante a disciplina
+- Ou utilize o seguinte conteúdo para listar os notebooks automaticamente:
+
+```markdown
+---
+title: "PPEC0039 - Estatística e Planejamento de Experimentos"
+listing:    
+    contents: 
+      - "Notebooks/*.ipynb"
+    type: grid  
+
+---
+```
+
+## Editar o arquivo lista_disciplina.qmd 
+
+Nesse caso os notebooks devem estar na pasta "Notebooks" dentro do projeto.
+Você pode customizar a aparência da lista usando outras opções encontradas no [manual do QUARTO](https://quarto.org/docs/authoring/metadata-listing/)
+
+## Os Notebooks 
+
+É necessario que cada notebook tenha uma primeira célula de titulo com esse formato:
+```markdown
+---
+categories:
+- PPEC
+- Ensino
+- Estatística
+date: 2023-03-16
+description: primeira aula
+image: aula_1.png
+title: "Aula 1 - Introdução"
+---
+``` 
+
+## Os Notebooks 
+
+Você deve escolher uma imagem para usar em cada notebook e deixar essas imagens na pasta "Notebooks" dentro do projeto. O nome da imagem deve ser o mesmo do notebook, mas com extensão .png ou jpg. Por exemplo, para o notebook "Aula_1.ipynb" a imagem deve ser "Aula_1.png" ou "Aula_1.jpg". Essa imagem será usada como miniatura na lista de notebooks.
+
+## Usando o GitHub Pages 
+
+- Crie um repositório no GitHub
+- Faça o commit dos arquivos do projeto no repositório
+- Eu usei o github desktop para isso, clonei no meu computador o repositório e depois arrastei os arquivos do projeto para a pasta do repositório no meu computador, depois fiz o commit e o push para o GitHub.
+
+## Depois de fazer o commit e o push  
+
+- Vá para as configurações do repositório > Pages
+- Selecione a branch "main" e a pasta "root"
+- Salve as configurações e aguarde a publicação da página
+
+## O link para a página  
+
+O link estará disponível em alguns minutos na mesma seção de Pages, o link para a página publicada será algo como: https://seu-usuario.github.io/seu-repositorio/
+- Acesse a página publicada usando o link fornecido pelo GitHub Pages
+- Depois compatilhe na tarefa do SIGAA o link. 
+
+# Fim ! { background-image="https://upload.wikimedia.org/wikipedia/commons/f/f9/COSMO_Skymed_flare.PNG"}
+Obrigado pela atenção e boa sorte com a criação da página! 
+Para acessar arquivos de exemplo [Click Here](https://github.com/alixandrini/Tutorial_quarto_web/build/){.button}
+Para ir para o início da pagina[Click Here](https://alixandrini.github.io/Tutorial_quarto_web/){.button}

@@ -1,0 +1,19 @@
+---
+title: "Mestrando em Engenharia Civil"
+description: "Sou mestrando em Engenharia Civil com foco em análise de dados e modelagem computacional."
+about:
+  template: trestles
+  links:
+    - icon: linkedin    
+      text: LinkedIn
+      url: https://www.linkedin.com/in/alixandrini/
+    - icon: github
+      text: Github
+      url: https://www.github.com/alixandrini          
+  image: aluno.webp
+
+---
+
+## Olá Pessoal,
+
+Sou Fulano de Tal, mestrando em Engenharia Civil com foco em análise de dados e modelagem computacional. Tenho experiência em Python, R e GIS, e estou animado para compartilhar meus conhecimentos e aprender com vocês durante esta disciplina. Tenho mais de 200 anos de experiência em ensino e pesquisa aplicada formando engenheiros, mestres e doutores. Conto com mais de 300 anos de experiência em projetos de engenharia civil.

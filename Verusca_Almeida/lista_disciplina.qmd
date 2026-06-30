@@ -1,0 +1,8 @@
+---
+title: "PPEC0039 - Estatística e Planejamento de Experimentos"
+listing:
+  contents: 
+    - "Notebooks/*.ipynb"
+  type: grid
+
+---
