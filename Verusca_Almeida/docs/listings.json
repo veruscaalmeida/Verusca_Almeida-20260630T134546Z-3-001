@@ -1,22 +1,27 @@
 [
   {
-    "listing": "/lista_disciplina.html",
-    "items": [
-      "/Notebooks/Alvos_GPR.html",
-      "/Notebooks/Aula_1.html",
-      "/build/Notebooks/Aula_1.html",
-      "/Notebooks/Aula_2.html",
-      "/build/Notebooks/Aula_2.html",
-      "/Notebooks/Aula_3.html",
-      "/build/Notebooks/Aula_3.html"
-    ]
-  },
-  {
     "listing": "/build/lista_disciplina.html",
     "items": [
       "/build/Notebooks/Aula_1.html",
       "/build/Notebooks/Aula_2.html",
       "/build/Notebooks/Aula_3.html"
+    ]
+  },
+  {
+    "listing": "/lista_disciplina.html",
+    "items": [
+      "/Notebooks/ANOVA.html",
+      "/build/Notebooks/Aula_1.html",
+      "/build/Notebooks/Aula_2.html",
+      "/build/Notebooks/Aula_3.html",
+      "/Notebooks/Aula_de_Amostragem.html",
+      "/Notebooks/Distribuição Normal.html",
+      "/Notebooks/Atividade_Estimativa_de_parametros.html",
+      "/Notebooks/Aula_de_Planejamento_de_Experimentos.html",
+      "/Notebooks/principio-experimentação.html",
+      "/Notebooks/Aula_de_Regressão_Linear_e_Correlação.html",
+      "/Notebooks/TESTES DE HIPÓTESES.html",
+      "/Notebooks/Testes_Normalidade_Homocedasticidade.html"
     ]
   }
 ]

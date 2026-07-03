@@ -1,0 +1,868 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en"><head>
+
+<meta charset="utf-8">
+<meta name="generator" content="quarto-1.9.38">
+
+<meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
+
+<meta name="dcterms.date" content="2023-03-16">
+<meta name="description" content="Aula 8 - Notebook sobre Princípios básicos de experimentação">
+
+<title>Princípios básicos de experimentação – Projeto PPEC</title>
+<style>
+/* Default styles provided by pandoc.
+** See https://pandoc.org/MANUAL.html#variables-for-html for config info.
+*/
+code{white-space: pre-wrap;}
+span.smallcaps{font-variant: small-caps;}
+div.columns{display: flex; gap: min(4vw, 1.5em);}
+div.column{flex: auto; overflow-x: auto;}
+div.hanging-indent{margin-left: 1.5em; text-indent: -1.5em;}
+ul.task-list{list-style: none;}
+ul.task-list li input[type="checkbox"] {
+  width: 0.8em;
+  margin: 0 0.8em 0.2em -1em; /* quarto-specific, see https://github.com/quarto-dev/quarto-cli/issues/4556 */ 
+  vertical-align: middle;
+}
+</style>
+
+
+<script src="../site_libs/quarto-nav/quarto-nav.js"></script>
+<script src="../site_libs/quarto-nav/headroom.min.js"></script>
+<script src="../site_libs/clipboard/clipboard.min.js"></script>
+<script src="../site_libs/quarto-search/autocomplete.umd.js"></script>
+<script src="../site_libs/quarto-search/fuse.min.js"></script>
+<script src="../site_libs/quarto-search/quarto-search.js"></script>
+<meta name="quarto:offset" content="../">
+<script src="../site_libs/quarto-html/quarto.js" type="module"></script>
+<script src="../site_libs/quarto-html/tabsets/tabsets.js" type="module"></script>
+<script src="../site_libs/quarto-html/popper.min.js"></script>
+<script src="../site_libs/quarto-html/tippy.umd.min.js"></script>
+<script src="../site_libs/quarto-html/anchor.min.js"></script>
+<link href="../site_libs/quarto-html/tippy.css" rel="stylesheet">
+<link href="../site_libs/quarto-html/quarto-syntax-highlighting-15634bcf2e68342d4ad2dfa704d543f6.css" rel="stylesheet" id="quarto-text-highlighting-styles">
+<script src="../site_libs/bootstrap/bootstrap.min.js"></script>
+<link href="../site_libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
+<link href="../site_libs/bootstrap/bootstrap-a0f9fd0d421825b736dc1bbcbcba2219.min.css" rel="stylesheet" append-hash="true" id="quarto-bootstrap" data-mode="light">
+<script id="quarto-search-options" type="application/json">{
+  "location": "navbar",
+  "copy-button": false,
+  "collapse-after": 3,
+  "panel-placement": "end",
+  "type": "overlay",
+  "limit": 50,
+  "keyboard-shortcut": [
+    "f",
+    "/",
+    "s"
+  ],
+  "show-item-context": false,
+  "language": {
+    "search-no-results-text": "No results",
+    "search-matching-documents-text": "matching documents",
+    "search-copy-link-title": "Copy link to search",
+    "search-hide-matches-text": "Hide additional matches",
+    "search-more-match-text": "more match in this document",
+    "search-more-matches-text": "more matches in this document",
+    "search-clear-button-title": "Clear",
+    "search-text-placeholder": "",
+    "search-detached-cancel-button-title": "Cancel",
+    "search-submit-button-title": "Submit",
+    "search-label": "Search"
+  }
+}</script>
+
+
+<link rel="stylesheet" href="../styles.css">
+</head>
+
+<body class="nav-fixed quarto-light">
+
+<div id="quarto-search-results"></div>
+  <header id="quarto-header" class="headroom fixed-top">
+    <nav class="navbar navbar-expand-lg " data-bs-theme="dark">
+      <div class="navbar-container container-fluid">
+      <div class="navbar-brand-container mx-auto">
+    <a class="navbar-brand" href="../index.html">
+    <span class="navbar-title">Projeto PPEC</span>
+    </a>
+  </div>
+            <div id="quarto-search" class="" title="Search"></div>
+          <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarCollapse" aria-controls="navbarCollapse" role="menu" aria-expanded="false" aria-label="Toggle navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
+  <span class="navbar-toggler-icon"></span>
+</button>
+          <div class="collapse navbar-collapse" id="navbarCollapse">
+            <ul class="navbar-nav navbar-nav-scroll me-auto">
+  <li class="nav-item">
+    <a class="nav-link" href="../index.html"> 
+<span class="menu-text">Home</span></a>
+  </li>  
+  <li class="nav-item">
+    <a class="nav-link" href="../lista_disciplina.html"> 
+<span class="menu-text">PPEC0039</span></a>
+  </li>  
+  <li class="nav-item">
+    <a class="nav-link" href="../about.html"> 
+<span class="menu-text">Sobre</span></a>
+  </li>  
+</ul>
+          </div> <!-- /navcollapse -->
+            <div class="quarto-navbar-tools">
+</div>
+      </div> <!-- /container-fluid -->
+    </nav>
+</header>
+<!-- content -->
+<div id="quarto-content" class="quarto-container page-columns page-rows-contents page-layout-article page-navbar">
+<!-- sidebar -->
+<!-- margin-sidebar -->
+    <div id="quarto-margin-sidebar" class="sidebar margin-sidebar">
+        <nav id="TOC" role="doc-toc" class="toc-active">
+    <h2 id="toc-title">On this page</h2>
+   
+  <ul>
+  <li><a href="#conceitos-gerais-e-princípios-da-experimentação" id="toc-conceitos-gerais-e-princípios-da-experimentação" class="nav-link active" data-scroll-target="#conceitos-gerais-e-princípios-da-experimentação">Conceitos Gerais e Princípios da Experimentação</a>
+  <ul class="collapse">
+  <li><a href="#ideia-central-do-tema" id="toc-ideia-central-do-tema" class="nav-link" data-scroll-target="#ideia-central-do-tema">1. Ideia central do tema</a></li>
+  <li><a href="#o-que-é-um-experimento" id="toc-o-que-é-um-experimento" class="nav-link" data-scroll-target="#o-que-é-um-experimento">2. O que é um experimento?</a>
+  <ul class="collapse">
+  <li><a href="#exemplo-aplicado" id="toc-exemplo-aplicado" class="nav-link" data-scroll-target="#exemplo-aplicado">Exemplo aplicado</a></li>
+  </ul></li>
+  <li><a href="#tratamento" id="toc-tratamento" class="nav-link" data-scroll-target="#tratamento">3. Tratamento</a></li>
+  <li><a href="#fatores-e-níveis" id="toc-fatores-e-níveis" class="nav-link" data-scroll-target="#fatores-e-níveis">4. Fatores e níveis</a>
+  <ul class="collapse">
+  <li><a href="#exemplo-1" id="toc-exemplo-1" class="nav-link" data-scroll-target="#exemplo-1">Exemplo 1</a></li>
+  <li><a href="#exemplo-2" id="toc-exemplo-2" class="nav-link" data-scroll-target="#exemplo-2">Exemplo 2</a></li>
+  <li><a href="#exemplo-3" id="toc-exemplo-3" class="nav-link" data-scroll-target="#exemplo-3">Exemplo 3</a></li>
+  </ul></li>
+  <li><a href="#unidade-experimental-ou-parcela" id="toc-unidade-experimental-ou-parcela" class="nav-link" data-scroll-target="#unidade-experimental-ou-parcela">5. Unidade experimental ou parcela</a>
+  <ul class="collapse">
+  <li><a href="#exemplo-aplicado-1" id="toc-exemplo-aplicado-1" class="nav-link" data-scroll-target="#exemplo-aplicado-1">Exemplo aplicado</a></li>
+  </ul></li>
+  <li><a href="#variável-resposta-ou-variável-dependente" id="toc-variável-resposta-ou-variável-dependente" class="nav-link" data-scroll-target="#variável-resposta-ou-variável-dependente">6. Variável resposta ou variável dependente</a></li>
+  <li><a href="#resumo-compilado-dos-conceitos." id="toc-resumo-compilado-dos-conceitos." class="nav-link" data-scroll-target="#resumo-compilado-dos-conceitos.">7. Resumo compilado dos conceitos.</a></li>
+  <li><a href="#erro-experimental-e-variabilidade" id="toc-erro-experimental-e-variabilidade" class="nav-link" data-scroll-target="#erro-experimental-e-variabilidade">8. Erro experimental e variabilidade</a>
+  <ul class="collapse">
+  <li><a href="#exemplo" id="toc-exemplo" class="nav-link" data-scroll-target="#exemplo">Exemplo</a></li>
+  </ul></li>
+  <li><a href="#repetição" id="toc-repetição" class="nav-link" data-scroll-target="#repetição">9. Repetição</a>
+  <ul class="collapse">
+  <li><a href="#exemplo-4" id="toc-exemplo-4" class="nav-link" data-scroll-target="#exemplo-4">Exemplo</a></li>
+  </ul></li>
+  <li><a href="#delineamento-experimental" id="toc-delineamento-experimental" class="nav-link" data-scroll-target="#delineamento-experimental">10. Delineamento experimental</a>
+  <ul class="collapse">
+  <li><a href="#exemplos-de-delineamentos" id="toc-exemplos-de-delineamentos" class="nav-link" data-scroll-target="#exemplos-de-delineamentos">Exemplos de delineamentos</a></li>
+  </ul></li>
+  <li><a href="#efeito-de-borda-e-bordadura" id="toc-efeito-de-borda-e-bordadura" class="nav-link" data-scroll-target="#efeito-de-borda-e-bordadura">11. Efeito de borda e bordadura</a>
+  <ul class="collapse">
+  <li><a href="#exemplo-aplicado-2" id="toc-exemplo-aplicado-2" class="nav-link" data-scroll-target="#exemplo-aplicado-2">Exemplo aplicado</a></li>
+  </ul></li>
+  <li><a href="#croqui-do-experimento" id="toc-croqui-do-experimento" class="nav-link" data-scroll-target="#croqui-do-experimento">12. Croqui do experimento</a></li>
+  <li><a href="#os-três-princípios-básicos-da-experimentação" id="toc-os-três-princípios-básicos-da-experimentação" class="nav-link" data-scroll-target="#os-três-princípios-básicos-da-experimentação">13. Os três princípios básicos da experimentação</a></li>
+  <li><a href="#casualização-ou-aleatorização" id="toc-casualização-ou-aleatorização" class="nav-link" data-scroll-target="#casualização-ou-aleatorização">14. Casualização ou aleatorização</a>
+  <ul class="collapse">
+  <li><a href="#exemplo-5" id="toc-exemplo-5" class="nav-link" data-scroll-target="#exemplo-5">Exemplo</a></li>
+  </ul></li>
+  <li><a href="#controle-local-ou-bloqueamento" id="toc-controle-local-ou-bloqueamento" class="nav-link" data-scroll-target="#controle-local-ou-bloqueamento">15. Controle local ou bloqueamento</a>
+  <ul class="collapse">
+  <li><a href="#exemplo-6" id="toc-exemplo-6" class="nav-link" data-scroll-target="#exemplo-6">Exemplo</a></li>
+  </ul></li>
+  <li><a href="#experimento-cego-e-duplo-cego" id="toc-experimento-cego-e-duplo-cego" class="nav-link" data-scroll-target="#experimento-cego-e-duplo-cego">16. Experimento cego e duplo-cego</a></li>
+  <li><a href="#um-resumo-sintétizado-para-planejamento-de-experimentos-com-base-nos-conceitos-da-aula" id="toc-um-resumo-sintétizado-para-planejamento-de-experimentos-com-base-nos-conceitos-da-aula" class="nav-link" data-scroll-target="#um-resumo-sintétizado-para-planejamento-de-experimentos-com-base-nos-conceitos-da-aula">17. Um resumo sintétizado para planejamento de experimentos com base nos conceitos da aula:</a></li>
+  </ul></li>
+  </ul>
+</nav>
+    </div>
+<!-- main -->
+<main class="content" id="quarto-document-content">
+
+<header id="title-block-header" class="quarto-title-block default">
+<div class="quarto-title">
+<h1 class="title">Princípios básicos de experimentação</h1>
+  <div class="quarto-categories">
+    <div class="quarto-category">PPEC</div>
+    <div class="quarto-category">Ensino</div>
+    <div class="quarto-category">Estatística</div>
+  </div>
+  </div>
+
+<div>
+  <div class="description">
+    Aula 8 - Notebook sobre Princípios básicos de experimentação
+  </div>
+</div>
+
+
+<div class="quarto-title-meta">
+
+    
+    <div>
+    <div class="quarto-title-meta-heading">Published</div>
+    <div class="quarto-title-meta-contents">
+      <p class="date">March 16, 2023</p>
+    </div>
+  </div>
+  
+    
+  </div>
+  
+
+
+</header>
+
+
+<section id="conceitos-gerais-e-princípios-da-experimentação" class="level1">
+<h1>Conceitos Gerais e Princípios da Experimentação</h1>
+<p><strong>Resumo de aula</strong></p>
+<p>Este notebook apresenta um resumo explicativo da aula com exemplo que fazem parte da rotina do laboratório de materais com o objetivo de auxiliar na compreensão dos conceitos apresentados.</p>
+<section id="ideia-central-do-tema" class="level2">
+<h2 class="anchored" data-anchor-id="ideia-central-do-tema">1. Ideia central do tema</h2>
+<p>A tema trata de como <strong>planejar, organizar, conduzir e analisar um experimento</strong> de forma correta. A mensagem principal é que um experimento confiável não depende apenas da execução do ensaio, mas principalmente de um bom planejamento.</p>
+<p>Em outras palavras, não basta apenas coletar dados. É necessário definir antes:</p>
+<ul>
+<li>qual problema será estudado;</li>
+<li>quais tratamentos serão comparados;</li>
+<li>quais fatores e níveis serão avaliados;</li>
+<li>qual será a unidade experimental;</li>
+<li>qual variável resposta será medida;</li>
+<li>quantas repetições serão usadas;</li>
+<li>como os tratamentos serão distribuídos;</li>
+<li>qual análise estatística será aplicada.</li>
+</ul>
+</section>
+<section id="o-que-é-um-experimento" class="level2">
+<h2 class="anchored" data-anchor-id="o-que-é-um-experimento">2. O que é um experimento?</h2>
+<p>Um experimento, ou ensaio, é um <strong>procedimento planejado</strong> com o objetivo de descobrir novos fatos, confirmar hipóteses, refutar ideias ou validar resultados já obtidos.</p>
+<p>Em um ambiente ideal, o pesquisador tenta controlar todas as variáveis que podem influenciar o resultado. Porém, na prática, nem sempre isso é possível. Por isso, são usadas estratégias estatísticas e de planejamento experimental para reduzir interferências e separar o efeito real dos tratamentos da variação natural do experimento.</p>
+<section id="exemplo-aplicado" class="level3">
+<h3 class="anchored" data-anchor-id="exemplo-aplicado">Exemplo aplicado</h3>
+<p>Em um estudo com concreto, uma pergunta experimental poderia ser:</p>
+<blockquote class="blockquote">
+<p>A carbonatação aumenta a penetração de cloretos no concreto?</p>
+</blockquote>
+<p>Para responder corretamente, é necessário definir grupos experimentais, condições de exposição, número de corpos de prova, variáveis medidas e método de análise estatística.</p>
+</section>
+</section>
+<section id="tratamento" class="level2">
+<h2 class="anchored" data-anchor-id="tratamento">3. Tratamento</h2>
+<p>O <strong>tratamento</strong> é a condição aplicada à unidade experimental. É aquilo que se deseja testar, comparar ou avaliar.</p>
+<p>Os tratamentos podem ser:</p>
+<p><strong>Quantitativos:</strong> quando possuem escala numérica. Exemplos: temperatura, tempo de exposição, teor de aditivo, concentração de CO₂, dose de nutriente.</p>
+<p><strong>Qualitativos:</strong> quando representam categorias sem ordenação numérica natural. Exemplos: tipo de cimento, marca de equipamento, método de cura, tipo de material.</p>
+</section>
+<section id="fatores-e-níveis" class="level2">
+<h2 class="anchored" data-anchor-id="fatores-e-níveis">4. Fatores e níveis</h2>
+<p>O <strong>fator</strong> é a variável independente estudada no experimento. Os <strong>níveis</strong> são as categorias, divisões ou valores assumidos por esse fator.</p>
+<section id="exemplo-1" class="level3">
+<h3 class="anchored" data-anchor-id="exemplo-1">Exemplo 1</h3>
+<p>Fator: tipo de exposição de degradçaão Níveis: carbonatação, cloretos, ataque por sulfatos.</p>
+</section>
+<section id="exemplo-2" class="level3">
+<h3 class="anchored" data-anchor-id="exemplo-2">Exemplo 2</h3>
+<p>Fator: tempo de exposição<br>
+Níveis: 7 dias, 14 dias, 28 dias e 56 dias</p>
+</section>
+<section id="exemplo-3" class="level3">
+<h3 class="anchored" data-anchor-id="exemplo-3">Exemplo 3</h3>
+<p>Fator: tipo de cimento<br>
+Níveis: CP II-F-32, CP II-F-40, CP V-ARI</p>
+<p>A escolha correta dos fatores e níveis é essencial, porque define o que será realmente investigado no experimento.</p>
+</section>
+</section>
+<section id="unidade-experimental-ou-parcela" class="level2">
+<h2 class="anchored" data-anchor-id="unidade-experimental-ou-parcela">5. Unidade experimental ou parcela</h2>
+<p>A <strong>unidade experimental</strong> é o local, indivíduo, peça, corpo de prova ou amostra onde o tratamento é aplicado e de onde serão obtidos os dados.</p>
+<p>A unidade experimental pode ser:</p>
+<ul>
+<li>um corpo de prova de concreto;</li>
+<li>um corpo de prova de argamassa;</li>
+<li>um disco de concreto;</li>
+<li>uma amostra em pó extraida do corpo de prova, que será submetida a determinado ensaio.</li>
+</ul>
+<section id="exemplo-aplicado-1" class="level3">
+<h3 class="anchored" data-anchor-id="exemplo-aplicado-1">Exemplo aplicado</h3>
+<p>Em um estudo com concreto, a unidade experimental pode ser o <strong>corpo de prova cilíndrico</strong>. Se o corpo de prova for cortado em discos e cada disco receber tratamento diferente, então o disco pode passar a ser considerado a unidade experimental, dependendo do planejamento.</p>
+</section>
+</section>
+<section id="variável-resposta-ou-variável-dependente" class="level2">
+<h2 class="anchored" data-anchor-id="variável-resposta-ou-variável-dependente">6. Variável resposta ou variável dependente</h2>
+<p>A <strong>variável resposta</strong> é a característica medida no experimento. Ela é chamada de variável dependente porque seu valor depende dos tratamentos aplicados.</p>
+<p>Ela pode ser:</p>
+<p><strong>Discreta:</strong> quando envolve contagem. <strong>Exemplos</strong>: número de fissuras, número de defeitos;</p>
+<p><strong>Contínua:</strong> quando pode assumir valores em uma escala numérica contínua. <strong>Exemplos</strong>: massa, umidade, profundidade de carbonatação, teor de cloretos, resistência à compressão, módulo de elasticidade.</p>
+</section>
+<section id="resumo-compilado-dos-conceitos." class="level2">
+<h2 class="anchored" data-anchor-id="resumo-compilado-dos-conceitos.">7. Resumo compilado dos conceitos.</h2>
+<p>Relação entre tratamento, fator, nível, unidade experimental e variável resposta Abaixo um exemplo envolvendo experimentos de ensaio de degradação do concreto.</p>
+<table class="caption-top table">
+<colgroup>
+<col style="width: 33%">
+<col style="width: 33%">
+<col style="width: 33%">
+</colgroup>
+<thead>
+<tr class="header">
+<th>Elemento</th>
+<th>Significado</th>
+<th>Exemplo em concreto</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td>Fator</td>
+<td>Variável independente estudada</td>
+<td>Tipo de exposição</td>
+</tr>
+<tr class="even">
+<td>Níveis</td>
+<td>Variações do fator</td>
+<td>Carbonatação, cloretos, ataque combinado</td>
+</tr>
+<tr class="odd">
+<td>Tratamento</td>
+<td>Condição aplicada à amostra</td>
+<td>Submeter o corpo de prova à carbonatação</td>
+</tr>
+<tr class="even">
+<td>Unidade experimental</td>
+<td>Onde o tratamento é aplicado</td>
+<td>Corpo de prova de concreto</td>
+</tr>
+<tr class="odd">
+<td>Variável resposta</td>
+<td>O que será medido</td>
+<td>Profundidade de carbonatação ou teor de cloretos</td>
+</tr>
+</tbody>
+</table>
+<p>Essa organização evita confusão e ajuda a estruturar corretamente o experimento.</p>
+</section>
+<section id="erro-experimental-e-variabilidade" class="level2">
+<h2 class="anchored" data-anchor-id="erro-experimental-e-variabilidade">8. Erro experimental e variabilidade</h2>
+<p>O <strong>erro experimental</strong> é a variação natural que ocorre entre unidades experimentais que receberam o mesmo tratamento.</p>
+<p>Isso significa que, mesmo quando duas amostras recebem exatamente o mesmo tratamento, os resultados podem ser diferentes. Essa diferença pode ocorrer por causas não controladas, como pequenas variações de material, moldagem, umidade, temperatura, cura, equipamento ou leitura.</p>
+<p>Esse erro não significa necessariamente que o experimento foi mal feito. Ele representa a variabilidade natural do processo experimental.</p>
+<section id="exemplo" class="level3">
+<h3 class="anchored" data-anchor-id="exemplo">Exemplo</h3>
+<p>Dois corpos de prova submetidos à mesma condição de carbonatação podem apresentar profundidades de carbonatação diferentes, por exemplo 12 mm e 15 mm. Essa diferença pode ser consequência da heterogeneidade natural do concreto.</p>
+</section>
+</section>
+<section id="repetição" class="level2">
+<h2 class="anchored" data-anchor-id="repetição">9. Repetição</h2>
+<p>A <strong>repetição</strong> é o número de vezes que um tratamento aparece no experimento.</p>
+<p>Ela é essencial porque permite estimar a variabilidade dos dados e calcular o erro experimental. Sem repetição, não é possível saber se uma diferença observada é realmente causada pelo tratamento ou se ocorreu apenas por acaso.</p>
+<section id="exemplo-4" class="level3">
+<h3 class="anchored" data-anchor-id="exemplo-4">Exemplo</h3>
+<p>Se apenas um corpo de prova for usado para cada tratamento, qualquer diferença observada pode ser acidental. Mas se vários corpos de prova forem usados em cada tratamento, é possível calcular médias, desvios e aplicar testes estatísticos.</p>
+<p>A repetição dá força ao experimento e permite que os resultados tenham maior confiabilidade.</p>
+</section>
+</section>
+<section id="delineamento-experimental" class="level2">
+<h2 class="anchored" data-anchor-id="delineamento-experimental">10. Delineamento experimental</h2>
+<p>O <strong>delineamento experimental</strong> é a forma como os tratamentos são distribuídos nas unidades experimentais.</p>
+<p>Ele define:</p>
+<ul>
+<li>como os tratamentos serão organizados;</li>
+<li>como as repetições serão distribuídas;</li>
+<li>se haverá ou não blocos;</li>
+<li>como o experimento será analisado estatisticamente.</li>
+</ul>
+<p>O delineamento busca reduzir a variação ao acaso e influencia diretamente a análise de variância, conhecida como <strong>ANOVA</strong>.</p>
+<section id="exemplos-de-delineamentos" class="level3">
+<h3 class="anchored" data-anchor-id="exemplos-de-delineamentos">Exemplos de delineamentos</h3>
+<ul>
+<li>Delineamento inteiramente casualizado;</li>
+<li>Delineamento em blocos casualizados;</li>
+<li>Quadrado latino;</li>
+<li>Delineamentos fatoriais;</li>
+<li>Delineamentos customizados para situações específicas.</li>
+</ul>
+</section>
+</section>
+<section id="efeito-de-borda-e-bordadura" class="level2">
+<h2 class="anchored" data-anchor-id="efeito-de-borda-e-bordadura">11. Efeito de borda e bordadura</h2>
+<p>O <strong>efeito de borda</strong> ocorre quando uma unidade experimental sofre influência das unidades vizinhas ou das condições externas do ambiente.</p>
+<p>Em campo, isso pode ocorrer quando parcelas localizadas nas extremidades recebem mais luz, vento ou interferência externa. Em laboratório, pode ocorrer quando amostras colocadas próximas à porta, parede ou saída de ar de uma câmara recebem condições diferentes das demais.</p>
+<p>A solução é criar uma faixa de segurança, chamada de <strong>bordadura</strong>, ou definir uma área útil de coleta de dados, protegida das interferências externas.</p>
+<section id="exemplo-aplicado-2" class="level3">
+<h3 class="anchored" data-anchor-id="exemplo-aplicado-2">Exemplo aplicado</h3>
+<p>Em uma câmara de carbonatação, corpos de prova posicionados próximos à entrada de ar podem ter exposição diferente dos corpos de prova posicionados no centro. O planejamento deve considerar essa possível interferência.</p>
+</section>
+</section>
+<section id="croqui-do-experimento" class="level2">
+<h2 class="anchored" data-anchor-id="croqui-do-experimento">12. Croqui do experimento</h2>
+<p>O <strong>croqui</strong> é o desenho esquemático do experimento. Ele mostra visualmente como os tratamentos foram distribuídos nas parcelas ou unidades experimentais.</p>
+<p>O croqui pode indicar:</p>
+<ul>
+<li>posição das amostras;</li>
+<li>identificação dos tratamentos;</li>
+<li>blocos experimentais;</li>
+<li>áreas de bordadura;</li>
+<li>dimensões;</li>
+<li>ordem de distribuição;</li>
+<li>resultado do sorteio dos tratamentos.</li>
+</ul>
+<p>O croqui é importante porque organiza o experimento e evita erros de identificação, troca de amostras ou perda de rastreabilidade.</p>
+</section>
+<section id="os-três-princípios-básicos-da-experimentação" class="level2">
+<h2 class="anchored" data-anchor-id="os-três-princípios-básicos-da-experimentação">13. Os três princípios básicos da experimentação</h2>
+<p>A aula apresenta três princípios fundamentais:</p>
+<ol type="1">
+<li><strong>Casualização ou aleatorização</strong>;</li>
+<li><strong>Repetição</strong>;</li>
+<li><strong>Controle local ou bloqueamento</strong>.</li>
+</ol>
+<p>Esses princípios são a base para tornar o experimento estatisticamente válido e tecnicamente confiável.</p>
+</section>
+<section id="casualização-ou-aleatorização" class="level2">
+<h2 class="anchored" data-anchor-id="casualização-ou-aleatorização">14. Casualização ou aleatorização</h2>
+<p>A <strong>casualização</strong> é a distribuição dos tratamentos por sorteio.</p>
+<p>Ela evita que o pesquisador, mesmo sem intenção, favoreça determinado tratamento. Também contribui para a independência dos erros e ajuda a tornar os testes estatísticos válidos.</p>
+<section id="exemplo-5" class="level3">
+<h3 class="anchored" data-anchor-id="exemplo-5">Exemplo</h3>
+<p>Se houver uma estufa ou câmara com regiões mais quentes e mais frias, não se deve colocar todos os corpos de prova de um mesmo tratamento em uma única região. O ideal é sortear as posições ou distribuir os tratamentos de forma aleatória.</p>
+<p>A aleatorização evita vieses e reduz a influência da decisão subjetiva do pesquisador.</p>
+</section>
+</section>
+<section id="controle-local-ou-bloqueamento" class="level2">
+<h2 class="anchored" data-anchor-id="controle-local-ou-bloqueamento">15. Controle local ou bloqueamento</h2>
+<p>O <strong>controle local</strong>, também chamado de <strong>bloqueamento</strong>, é usado quando existe uma fonte conhecida de variação no experimento.</p>
+<p>Nesse caso, agrupam-se unidades experimentais semelhantes em blocos. Assim, a comparação entre tratamentos ocorre dentro de condições mais homogêneas.</p>
+<section id="exemplo-6" class="level3">
+<h3 class="anchored" data-anchor-id="exemplo-6">Exemplo</h3>
+<p>Se uma câmara de exposição apresenta diferença de temperatura entre prateleiras superiores e inferiores, cada prateleira pode ser considerada um bloco. Dentro de cada bloco, os tratamentos são distribuídos.</p>
+<p>Isso melhora a precisão do experimento e reduz o erro experimental.</p>
+</section>
+</section>
+<section id="experimento-cego-e-duplo-cego" class="level2">
+<h2 class="anchored" data-anchor-id="experimento-cego-e-duplo-cego">16. Experimento cego e duplo-cego</h2>
+<p>No <strong>experimento cego</strong>, o avaliador não sabe qual tratamento foi aplicado a cada unidade experimental. Isso reduz a influência da expectativa do avaliador sobre o resultado.</p>
+<p>No <strong>experimento duplo-cego</strong>, nem o pesquisador nem o avaliador sabem qual tratamento foi aplicado a cada unidade experimental durante a avaliação.</p>
+<p>Esse tipo de procedimento é útil quando existe alguma avaliação subjetiva, como análise visual, classificação de dano, intensidade de fissuração ou alteração de cor.</p>
+</section>
+<section id="um-resumo-sintétizado-para-planejamento-de-experimentos-com-base-nos-conceitos-da-aula" class="level2">
+<h2 class="anchored" data-anchor-id="um-resumo-sintétizado-para-planejamento-de-experimentos-com-base-nos-conceitos-da-aula">17. Um resumo sintétizado para planejamento de experimentos com base nos conceitos da aula:</h2>
+<p>A parte final da aula apresenta uma sequência lógica para planejar experimentos:</p>
+<ol type="1">
+<li>Conhecimento do problema;</li>
+<li>Escolha dos fatores e níveis;</li>
+<li>Escolha da variável resposta;</li>
+<li>Escolha do delineamento experimental;</li>
+<li>Execução e condução do experimento;</li>
+<li>Análise dos dados;</li>
+<li>Conclusões e recomendações.</li>
+</ol>
+<p>Essa sequência ajuda a transformar uma pergunta de pesquisa em um experimento organizado e analisável, afinal um experimento confiável não começa no laboratório; começa no planejamento.</p>
+
+
+</section>
+</section>
+
+</main> <!-- /main -->
+<script id="quarto-html-after-body" type="application/javascript">
+  window.document.addEventListener("DOMContentLoaded", function (event) {
+    const icon = "";
+    const anchorJS = new window.AnchorJS();
+    anchorJS.options = {
+      placement: 'right',
+      icon: icon
+    };
+    anchorJS.add('.anchored');
+    const isCodeAnnotation = (el) => {
+      for (const clz of el.classList) {
+        if (clz.startsWith('code-annotation-')) {                     
+          return true;
+        }
+      }
+      return false;
+    }
+    const onCopySuccess = function(e) {
+      // button target
+      const button = e.trigger;
+      // don't keep focus
+      button.blur();
+      // flash "checked"
+      button.classList.add('code-copy-button-checked');
+      var currentTitle = button.getAttribute("title");
+      button.setAttribute("title", "Copied!");
+      let tooltip;
+      if (window.bootstrap) {
+        button.setAttribute("data-bs-toggle", "tooltip");
+        button.setAttribute("data-bs-placement", "left");
+        button.setAttribute("data-bs-title", "Copied!");
+        tooltip = new bootstrap.Tooltip(button, 
+          { trigger: "manual", 
+            customClass: "code-copy-button-tooltip",
+            offset: [0, -8]});
+        tooltip.show();    
+      }
+      setTimeout(function() {
+        if (tooltip) {
+          tooltip.hide();
+          button.removeAttribute("data-bs-title");
+          button.removeAttribute("data-bs-toggle");
+          button.removeAttribute("data-bs-placement");
+        }
+        button.setAttribute("title", currentTitle);
+        button.classList.remove('code-copy-button-checked');
+      }, 1000);
+      // clear code selection
+      e.clearSelection();
+    }
+    const getTextToCopy = function(trigger) {
+      const outerScaffold = trigger.parentElement.cloneNode(true);
+      const codeEl = outerScaffold.querySelector('code');
+      for (const childEl of codeEl.children) {
+        if (isCodeAnnotation(childEl)) {
+          childEl.remove();
+        }
+      }
+      return codeEl.innerText;
+    }
+    const clipboard = new window.ClipboardJS('.code-copy-button:not([data-in-quarto-modal])', {
+      text: getTextToCopy
+    });
+    clipboard.on('success', onCopySuccess);
+    if (window.document.getElementById('quarto-embedded-source-code-modal')) {
+      const clipboardModal = new window.ClipboardJS('.code-copy-button[data-in-quarto-modal]', {
+        text: getTextToCopy,
+        container: window.document.getElementById('quarto-embedded-source-code-modal')
+      });
+      clipboardModal.on('success', onCopySuccess);
+    }
+      var localhostRegex = new RegExp(/^(?:http|https):\/\/localhost\:?[0-9]*\//);
+      var mailtoRegex = new RegExp(/^mailto:/);
+        var filterRegex = new RegExp('/' + window.location.host + '/');
+      var isInternal = (href) => {
+          return filterRegex.test(href) || localhostRegex.test(href) || mailtoRegex.test(href);
+      }
+      // Inspect non-navigation links and adorn them if external
+     var links = window.document.querySelectorAll('a[href]:not(.nav-link):not(.navbar-brand):not(.toc-action):not(.sidebar-link):not(.sidebar-item-toggle):not(.pagination-link):not(.no-external):not([aria-hidden]):not(.dropdown-item):not(.quarto-navigation-tool):not(.about-link)');
+      for (var i=0; i<links.length; i++) {
+        const link = links[i];
+        if (!isInternal(link.href)) {
+          // undo the damage that might have been done by quarto-nav.js in the case of
+          // links that we want to consider external
+          if (link.dataset.originalHref !== undefined) {
+            link.href = link.dataset.originalHref;
+          }
+        }
+      }
+    function tippyHover(el, contentFn, onTriggerFn, onUntriggerFn) {
+      const config = {
+        allowHTML: true,
+        maxWidth: 500,
+        delay: 100,
+        arrow: false,
+        appendTo: function(el) {
+            return el.parentElement;
+        },
+        interactive: true,
+        interactiveBorder: 10,
+        theme: 'quarto',
+        placement: 'bottom-start',
+      };
+      if (contentFn) {
+        config.content = contentFn;
+      }
+      if (onTriggerFn) {
+        config.onTrigger = onTriggerFn;
+      }
+      if (onUntriggerFn) {
+        config.onUntrigger = onUntriggerFn;
+      }
+      window.tippy(el, config); 
+    }
+    const noterefs = window.document.querySelectorAll('a[role="doc-noteref"]');
+    for (var i=0; i<noterefs.length; i++) {
+      const ref = noterefs[i];
+      tippyHover(ref, function() {
+        // use id or data attribute instead here
+        let href = ref.getAttribute('data-footnote-href') || ref.getAttribute('href');
+        try { href = new URL(href).hash; } catch {}
+        const id = href.replace(/^#\/?/, "");
+        const note = window.document.getElementById(id);
+        if (note) {
+          return note.innerHTML;
+        } else {
+          return "";
+        }
+      });
+    }
+    const xrefs = window.document.querySelectorAll('a.quarto-xref');
+    const processXRef = (id, note) => {
+      // Strip column container classes
+      const stripColumnClz = (el) => {
+        el.classList.remove("page-full", "page-columns");
+        if (el.children) {
+          for (const child of el.children) {
+            stripColumnClz(child);
+          }
+        }
+      }
+      stripColumnClz(note)
+      if (id === null || id.startsWith('sec-')) {
+        // Special case sections, only their first couple elements
+        const container = document.createElement("div");
+        if (note.children && note.children.length > 2) {
+          container.appendChild(note.children[0].cloneNode(true));
+          for (let i = 1; i < note.children.length; i++) {
+            const child = note.children[i];
+            if (child.tagName === "P" && child.innerText === "") {
+              continue;
+            } else {
+              container.appendChild(child.cloneNode(true));
+              break;
+            }
+          }
+          if (window.Quarto?.typesetMath) {
+            window.Quarto.typesetMath(container);
+          }
+          return container.innerHTML
+        } else {
+          if (window.Quarto?.typesetMath) {
+            window.Quarto.typesetMath(note);
+          }
+          return note.innerHTML;
+        }
+      } else {
+        // Remove any anchor links if they are present
+        const anchorLink = note.querySelector('a.anchorjs-link');
+        if (anchorLink) {
+          anchorLink.remove();
+        }
+        if (window.Quarto?.typesetMath) {
+          window.Quarto.typesetMath(note);
+        }
+        if (note.classList.contains("callout")) {
+          return note.outerHTML;
+        } else {
+          return note.innerHTML;
+        }
+      }
+    }
+    for (var i=0; i<xrefs.length; i++) {
+      const xref = xrefs[i];
+      tippyHover(xref, undefined, function(instance) {
+        instance.disable();
+        let url = xref.getAttribute('href');
+        let hash = undefined; 
+        if (url.startsWith('#')) {
+          hash = url;
+        } else {
+          try { hash = new URL(url).hash; } catch {}
+        }
+        if (hash) {
+          const id = hash.replace(/^#\/?/, "");
+          const note = window.document.getElementById(id);
+          if (note !== null) {
+            try {
+              const html = processXRef(id, note.cloneNode(true));
+              instance.setContent(html);
+            } finally {
+              instance.enable();
+              instance.show();
+            }
+          } else {
+            // See if we can fetch this
+            fetch(url.split('#')[0])
+            .then(res => res.text())
+            .then(html => {
+              const parser = new DOMParser();
+              const htmlDoc = parser.parseFromString(html, "text/html");
+              const note = htmlDoc.getElementById(id);
+              if (note !== null) {
+                const html = processXRef(id, note);
+                instance.setContent(html);
+              } 
+            }).finally(() => {
+              instance.enable();
+              instance.show();
+            });
+          }
+        } else {
+          // See if we can fetch a full url (with no hash to target)
+          // This is a special case and we should probably do some content thinning / targeting
+          fetch(url)
+          .then(res => res.text())
+          .then(html => {
+            const parser = new DOMParser();
+            const htmlDoc = parser.parseFromString(html, "text/html");
+            const note = htmlDoc.querySelector('main.content');
+            if (note !== null) {
+              // This should only happen for chapter cross references
+              // (since there is no id in the URL)
+              // remove the first header
+              if (note.children.length > 0 && note.children[0].tagName === "HEADER") {
+                note.children[0].remove();
+              }
+              const html = processXRef(null, note);
+              instance.setContent(html);
+            } 
+          }).finally(() => {
+            instance.enable();
+            instance.show();
+          });
+        }
+      }, function(instance) {
+      });
+    }
+        let selectedAnnoteEl;
+        const selectorForAnnotation = ( cell, annotation) => {
+          let cellAttr = 'data-code-cell="' + cell + '"';
+          let lineAttr = 'data-code-annotation="' +  annotation + '"';
+          const selector = 'span[' + cellAttr + '][' + lineAttr + ']';
+          return selector;
+        }
+        const selectCodeLines = (annoteEl) => {
+          const doc = window.document;
+          const targetCell = annoteEl.getAttribute("data-target-cell");
+          const targetAnnotation = annoteEl.getAttribute("data-target-annotation");
+          const annoteSpan = window.document.querySelector(selectorForAnnotation(targetCell, targetAnnotation));
+          const lines = annoteSpan.getAttribute("data-code-lines").split(",");
+          const lineIds = lines.map((line) => {
+            return targetCell + "-" + line;
+          })
+          let top = null;
+          let height = null;
+          let parent = null;
+          if (lineIds.length > 0) {
+              //compute the position of the single el (top and bottom and make a div)
+              const el = window.document.getElementById(lineIds[0]);
+              top = el.offsetTop;
+              height = el.offsetHeight;
+              parent = el.parentElement.parentElement;
+            if (lineIds.length > 1) {
+              const lastEl = window.document.getElementById(lineIds[lineIds.length - 1]);
+              const bottom = lastEl.offsetTop + lastEl.offsetHeight;
+              height = bottom - top;
+            }
+            if (top !== null && height !== null && parent !== null) {
+              // cook up a div (if necessary) and position it 
+              let div = window.document.getElementById("code-annotation-line-highlight");
+              if (div === null) {
+                div = window.document.createElement("div");
+                div.setAttribute("id", "code-annotation-line-highlight");
+                div.style.position = 'absolute';
+                parent.appendChild(div);
+              }
+              div.style.top = top - 2 + "px";
+              div.style.height = height + 4 + "px";
+              div.style.left = 0;
+              let gutterDiv = window.document.getElementById("code-annotation-line-highlight-gutter");
+              if (gutterDiv === null) {
+                gutterDiv = window.document.createElement("div");
+                gutterDiv.setAttribute("id", "code-annotation-line-highlight-gutter");
+                gutterDiv.style.position = 'absolute';
+                const codeCell = window.document.getElementById(targetCell);
+                const gutter = codeCell.querySelector('.code-annotation-gutter');
+                gutter.appendChild(gutterDiv);
+              }
+              gutterDiv.style.top = top - 2 + "px";
+              gutterDiv.style.height = height + 4 + "px";
+            }
+            selectedAnnoteEl = annoteEl;
+          }
+        };
+        const unselectCodeLines = () => {
+          const elementsIds = ["code-annotation-line-highlight", "code-annotation-line-highlight-gutter"];
+          elementsIds.forEach((elId) => {
+            const div = window.document.getElementById(elId);
+            if (div) {
+              div.remove();
+            }
+          });
+          selectedAnnoteEl = undefined;
+        };
+          // Handle positioning of the toggle
+      window.addEventListener(
+        "resize",
+        throttle(() => {
+          elRect = undefined;
+          if (selectedAnnoteEl) {
+            selectCodeLines(selectedAnnoteEl);
+          }
+        }, 10)
+      );
+      function throttle(fn, ms) {
+      let throttle = false;
+      let timer;
+        return (...args) => {
+          if(!throttle) { // first call gets through
+              fn.apply(this, args);
+              throttle = true;
+          } else { // all the others get throttled
+              if(timer) clearTimeout(timer); // cancel #2
+              timer = setTimeout(() => {
+                fn.apply(this, args);
+                timer = throttle = false;
+              }, ms);
+          }
+        };
+      }
+        // Attach click handler to the DT
+        const annoteDls = window.document.querySelectorAll('dt[data-target-cell]');
+        for (const annoteDlNode of annoteDls) {
+          annoteDlNode.addEventListener('click', (event) => {
+            const clickedEl = event.target;
+            if (clickedEl !== selectedAnnoteEl) {
+              unselectCodeLines();
+              const activeEl = window.document.querySelector('dt[data-target-cell].code-annotation-active');
+              if (activeEl) {
+                activeEl.classList.remove('code-annotation-active');
+              }
+              selectCodeLines(clickedEl);
+              clickedEl.classList.add('code-annotation-active');
+            } else {
+              // Unselect the line
+              unselectCodeLines();
+              clickedEl.classList.remove('code-annotation-active');
+            }
+          });
+        }
+    const findCites = (el) => {
+      const parentEl = el.parentElement;
+      if (parentEl) {
+        const cites = parentEl.dataset.cites;
+        if (cites) {
+          return {
+            el,
+            cites: cites.split(' ')
+          };
+        } else {
+          return findCites(el.parentElement)
+        }
+      } else {
+        return undefined;
+      }
+    };
+    var bibliorefs = window.document.querySelectorAll('a[role="doc-biblioref"]');
+    for (var i=0; i<bibliorefs.length; i++) {
+      const ref = bibliorefs[i];
+      const citeInfo = findCites(ref);
+      if (citeInfo) {
+        tippyHover(citeInfo.el, function() {
+          var popup = window.document.createElement('div');
+          citeInfo.cites.forEach(function(cite) {
+            var citeDiv = window.document.createElement('div');
+            citeDiv.classList.add('hanging-indent');
+            citeDiv.classList.add('csl-entry');
+            var biblioDiv = window.document.getElementById('ref-' + cite);
+            if (biblioDiv) {
+              citeDiv.innerHTML = biblioDiv.innerHTML;
+            }
+            popup.appendChild(citeDiv);
+          });
+          return popup.innerHTML;
+        });
+      }
+    }
+  });
+  </script>
+</div> <!-- /content -->
+
+
+
+
+</body></html>

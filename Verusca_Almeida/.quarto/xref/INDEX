@@ -40,5 +40,32 @@
   },
   "Notebooks/Alvos_GPR.ipynb": {
     "Alvos_GPR.html": "6603bc21"
+  },
+  "Notebooks/Aula_de_Amostragem.ipynb": {
+    "Aula_de_Amostragem.html": "91abdfe8"
+  },
+  "Notebooks/ANOVA.ipynb": {
+    "ANOVA.html": "e5b5e9b3"
+  },
+  "Notebooks/Atividade_Estimativa_de_parametros.ipynb": {
+    "Atividade_Estimativa_de_parametros.html": "bfc624ae"
+  },
+  "Notebooks/Aula_de_Planejamento_de_Experimentos.ipynb": {
+    "Aula_de_Planejamento_de_Experimentos.html": "205dd778"
+  },
+  "Notebooks/Aula_de_Regressão_Linear_e_Correlação.ipynb": {
+    "Aula_de_Regressão_Linear_e_Correlação.html": "d7d2bbb7"
+  },
+  "Notebooks/Distribuição Normal.ipynb": {
+    "Distribuição Normal.html": "54e17de9"
+  },
+  "Notebooks/principio-experimentação.ipynb": {
+    "principio-experimentação.html": "3dbcf2b6"
+  },
+  "Notebooks/TESTES DE HIPÓTESES.ipynb": {
+    "TESTES DE HIPÓTESES.html": "33f8436b"
+  },
+  "Notebooks/Testes_Normalidade_Homocedasticidade.ipynb": {
+    "Testes_Normalidade_Homocedasticidade.html": "48df17f5"
   }
 }
