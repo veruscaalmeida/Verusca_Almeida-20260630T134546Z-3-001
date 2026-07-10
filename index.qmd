@@ -1,6 +1,6 @@
 ---
 title: "Verusca Almeida"
-description: "Sou mestranda em Engenharia Civil com foco em análise de dados e modelagem computacional."
+description: "Geofísica e mestranda em Engenharia Civil na Universidade Federal da Bahia."
 about:
   template: trestles
   links:

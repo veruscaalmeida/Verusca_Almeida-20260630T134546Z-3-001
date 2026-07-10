@@ -1,13 +1,5 @@
 [
   {
-    "listing": "/build/lista_disciplina.html",
-    "items": [
-      "/build/Notebooks/Aula_1.html",
-      "/build/Notebooks/Aula_2.html",
-      "/build/Notebooks/Aula_3.html"
-    ]
-  },
-  {
     "listing": "/lista_disciplina.html",
     "items": [
       "/Notebooks/Aula_de_Amostragem.html",
