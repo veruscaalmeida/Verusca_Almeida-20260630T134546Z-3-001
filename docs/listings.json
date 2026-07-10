@@ -10,6 +10,7 @@
   {
     "listing": "/lista_disciplina.html",
     "items": [
+      "/Notebooks/Analise_de_variancia.html",
       "/Notebooks/Aula_de_Amostragem.html",
       "/Notebooks/Distribuição Normal.html",
       "/Notebooks/Atividade_Estimativa_de_parametros.html",
