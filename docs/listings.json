@@ -11,9 +11,6 @@
     "listing": "/lista_disciplina.html",
     "items": [
       "/Notebooks/ANOVA.html",
-      "/build/Notebooks/Aula_1.html",
-      "/build/Notebooks/Aula_2.html",
-      "/build/Notebooks/Aula_3.html",
       "/Notebooks/Aula_de_Amostragem.html",
       "/Notebooks/Distribuição Normal.html",
       "/Notebooks/Atividade_Estimativa_de_parametros.html",
