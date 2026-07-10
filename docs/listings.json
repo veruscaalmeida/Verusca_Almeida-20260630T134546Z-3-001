@@ -1,5 +1,9 @@
 [
   {
+    "listing": "/build/lista_disciplina.html",
+    "items": []
+  },
+  {
     "listing": "/lista_disciplina.html",
     "items": [
       "/Notebooks/Aula_de_Amostragem.html",
